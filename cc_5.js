@@ -23,3 +23,11 @@ function calculateTaxDeduction(grosspay){
     return grosspay*0.15;
 }
 
+//process payroll
+function processPayroll(employees) {
+    const basePay =calculateBasePay (employees.hourlyRate, employees.hoursWorked);
+    const overtimePay = calculateOvertimePay(employees.hourlyRate, employees.hoursWorked);
+    const grossPay = basePay + overtimePay;
+    const taxDeduction = calculateTaxDeduction(grossPay);
+    const netPay = grossPay - taxDeduction;
+    
