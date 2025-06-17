@@ -39,5 +39,18 @@ function processPayroll(employees) {
         taxDeduction: taxDeduction.toFixed(2),
         netPay: netPay.toFixed(2)
     };
-        
+
     }
+
+    //loop through employees and log payroll
+    employees.forEach(employee => {
+        const payroll = processPayroll(employee);
+        console.log(`Payroll for ${payroll.name}:`);
+        console.log(`Base Pay: $${payroll.basePay}`);
+        console.log(`Overtime Pay: $${payroll.overtimePay}`);
+        console.log(`Gross Pay: $${payroll.grossPay}`);
+        console.log(`Tax Deduction: $${payroll.taxDeduction}`);
+        console.log(`Net Pay: $${payroll.netPay}`);
+        console.log('-----------------------------');
+    }
+    );
