@@ -30,4 +30,14 @@ function processPayroll(employees) {
     const grossPay = basePay + overtimePay;
     const taxDeduction = calculateTaxDeduction(grossPay);
     const netPay = grossPay - taxDeduction;
-    
+
+    return {
+        name: employees.name,
+        basePay: basePay.toFixed(2),
+        overtimePay: overtimePay.toFixed(2),
+        grossPay: grossPay.toFixed(2),
+        taxDeduction: taxDeduction.toFixed(2),
+        netPay: netPay.toFixed(2)
+    };
+        
+    }
