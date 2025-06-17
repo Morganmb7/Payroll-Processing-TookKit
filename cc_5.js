@@ -1,7 +1,7 @@
 
 //List of employees with their hourly rates and hours worked
 const employees = [
-    { name: 'Morgan', hourlyRate: 45, hoursWorked: 40 },
+    { name: 'Morgan', hourlyRate: 56, hoursWorked: 40 },
     { name: 'Alex', hourlyRate: 35, hoursWorked: 38 },
     { name: 'Jamie', hourlyRate: 50, hoursWorked: 42 },
     { name: 'Taylor', hourlyRate: 30, hoursWorked: 45 },
@@ -24,15 +24,15 @@ function calculateTaxDeduction(grosspay){
 }
 
 //process payroll
-function processPayroll(employees) {
-    const basePay =calculateBasePay (employees.hourlyRate, employees.hoursWorked);
-    const overtimePay = calculateOvertimePay(employees.hourlyRate, employees.hoursWorked);
+function processPayroll(employee) {
+    const basePay = calculateBasePay(employee.hourlyRate, employee.hoursWorked);
+    const overtimePay = calculateOvertimePay(employee.hourlyRate, employee.hoursWorked);
     const grossPay = basePay + overtimePay;
     const taxDeduction = calculateTaxDeduction(grossPay);
     const netPay = grossPay - taxDeduction;
 
     return {
-        name: employees.name,
+        name: employee.name,
         basePay: basePay.toFixed(2),
         overtimePay: overtimePay.toFixed(2),
         grossPay: grossPay.toFixed(2),
